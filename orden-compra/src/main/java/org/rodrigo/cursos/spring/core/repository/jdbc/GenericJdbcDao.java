@@ -5,13 +5,14 @@ import javax.sql.DataSource;
 
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
-
+/**
+ * TODO [Add class documentation]
+ */
 public class GenericJdbcDao extends JdbcDaoSupport {
-	
-	@Resource
-	protected void setJdbcDataSource(DataSource ds) {
-		super.setDataSource(ds);
-	}
-	
-}
 
+  @Resource
+  protected void setJdbcDataSource(DataSource ds) {
+    super.setDataSource(ds);
+  }
+
+}

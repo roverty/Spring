@@ -10,35 +10,36 @@ import org.rodrigo.cursos.spring.core.domain.StatusOrden;
 import org.rodrigo.cursos.spring.core.repository.OrdenCompraRepository;
 import org.springframework.stereotype.Repository;
 
+/**
+ * TODO [Add class documentation]
+ */
 @Repository("ordenCompraRepository")
 public class OrdenCompraRepositoryMock implements OrdenCompraRepository {
-	
-	private Set<OrdenCompra> ordenes = new HashSet<OrdenCompra>();
-	
-	
 
-	@Override
-	public void guarda(OrdenCompra orden) {
-		// simular almacenaimiento en BD
-		ordenes.add(orden);
-	}
+  private Set<OrdenCompra> ordenes = new HashSet<OrdenCompra>();
 
-	@Override
-	public OrdenCompra obtenCompra(long id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+  @Override
+  public void guarda(OrdenCompra orden) {
+    // simular almacenaimiento en BD
+    ordenes.add(orden);
+  }
 
-	@Override
-	public boolean existeOrden(OrdenCompra orden) {
-		return ordenes.contains(orden);
-	}
+  @Override
+  public OrdenCompra obtenCompra(long id) {
+    // TODO Auto-generated method stub
+    return null;
+  }
 
-	@Override
-	public List<OrdenCompra> buscaOrdenes(Date fechaCompraInicio, Date fechaCompraFin, StatusOrden status) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+  @Override
+  public boolean existeOrden(OrdenCompra orden) {
+    return ordenes.contains(orden);
+  }
 
-	
+  @Override
+  public List<OrdenCompra> buscaOrdenes(Date fechaCompraInicio, Date fechaCompraFin,
+    StatusOrden status) {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
 }

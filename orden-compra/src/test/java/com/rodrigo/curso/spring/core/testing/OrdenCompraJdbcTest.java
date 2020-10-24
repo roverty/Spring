@@ -17,44 +17,51 @@ import org.rodrigo.cursos.spring.core.domain.StatusOrden;
 import org.rodrigo.cursos.spring.core.service.OrdenCompraService;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
-@SpringJUnitConfig(locations = {"/serviceAppContext.xml","/jdbcDaoAppContext.xml",
-		"/jdbcEmbeddedDbResources.xml"})
+/**
+ * TODO [Add class documentation]
+ */
+@SpringJUnitConfig(locations = { "/serviceAppContext.xml", "/jdbcDaoAppContext.xml",
+  "/jdbcEmbeddedDbResources.xml" })
 public class OrdenCompraJdbcTest {
-	
-	@Resource
-	private OrdenCompraService ordenCompraService;
-	
-	private static final Logger logger = LogManager.getLogger();
-	
-	@Test
-	public void registraOrdenCompra() {
-		OrdenCompra compra;
-		Articulo articulo;
-		ArticuloOrden articuloOrden;
-		
-		compra = new OrdenCompra();
-		compra.setId(1);
-		compra.setFechaCompra(new Date());
-		compra.setStatus(StatusOrden.REGISTRADA);
-		compra.setFechaStatus(new Date());
-		
-		// Agregando un articulo a la orden
-		articulo = new Articulo();
-		articulo.setId(1);
-		articulo.setNombre("Laptop");
-		articulo.setPrecio(15400);
-		
-		articuloOrden = new ArticuloOrden();
-		articuloOrden.setArticulo(articulo);
-		articuloOrden.setCantidad(3);
-		
-		compra.setArticulos(List.of(articuloOrden));
-		
-		logger.debug("Registrando una nueva orden de compra: {}", compra);
-		ordenCompraService.registraOrden(compra);
-		
-		logger.debug("Verificando la existencia de la orden en la BD");
-		assertTrue(ordenCompraService.existeOrden(compra),"La orden de compra con id "+compra.getId()+" no se persistio");
-		
-	}
+
+  @Resource
+  private OrdenCompraService ordenCompraService;
+
+  private static final Logger logger = LogManager.getLogger();
+
+  /**
+   * TODO [Add method documentation]
+   */
+  @Test
+  public void registraOrdenCompra() {
+    OrdenCompra compra;
+    Articulo articulo;
+    ArticuloOrden articuloOrden;
+
+    compra = new OrdenCompra();
+    compra.setId(1);
+    compra.setFechaCompra(new Date());
+    compra.setStatus(StatusOrden.REGISTRADA);
+    compra.setFechaStatus(new Date());
+
+    // Agregando un articulo a la orden
+    articulo = new Articulo();
+    articulo.setId(1);
+    articulo.setNombre("Laptop");
+    articulo.setPrecio(15400);
+
+    articuloOrden = new ArticuloOrden();
+    articuloOrden.setArticulo(articulo);
+    articuloOrden.setCantidad(3);
+
+    compra.setArticulos(List.of(articuloOrden));
+
+    logger.debug("Registrando una nueva orden de compra: {}", compra);
+    ordenCompraService.registraOrden(compra);
+
+    logger.debug("Verificando la existencia de la orden en la BD");
+    assertTrue(ordenCompraService.existeOrden(compra),
+      "La orden de compra con id " + compra.getId() + " no se persistio");
+
+  }
 }

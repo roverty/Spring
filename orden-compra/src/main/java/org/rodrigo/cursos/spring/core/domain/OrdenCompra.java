@@ -3,85 +3,126 @@ package org.rodrigo.cursos.spring.core.domain;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * TODO [Add class documentation]
+ */
 public class OrdenCompra {
-	private long id;
-	
-	private Date fechaCompra;
-	
-	private StatusOrden status;
-	
-	private Date fechaStatus;
-	
-	private List<ArticuloOrden> articulos;
-	
-	public long getId() {
-		return id;
-	}
+  private long id;
 
-	public void setId(long id) {
-		this.id = id;
-	}
+  private Date fechaCompra;
 
-	public Date getFechaCompra() {
-		return fechaCompra;
-	}
+  private StatusOrden status;
 
-	public void setFechaCompra(Date fechaCompra) {
-		this.fechaCompra = fechaCompra;
-	}
+  private Date fechaStatus;
 
-	public List<ArticuloOrden> getArticulos() {
-		return articulos;
-	}
+  private List<ArticuloOrden> articulos;
 
-	public void setArticulos(List<ArticuloOrden> articulos) {
-		this.articulos = articulos;
-	}
+  /**
+   * TODO [Add method documentation]
+   * @return
+   */
+  public long getId() {
+    return id;
+  }
 
-	public StatusOrden getStatus() {
-		return status;
-	}
+  /**
+   * TODO [Add method documentation]
+   * @param id
+   */
+  public void setId(long id) {
+    this.id = id;
+  }
 
-	public void setStatus(StatusOrden status) {
-		this.status = status;
-	}
+  /**
+   * TODO [Add method documentation]
+   * @return
+   */
+  public Date getFechaCompra() {
+    return fechaCompra;
+  }
 
-	public Date getFechaStatus() {
-		return fechaStatus;
-	}
+  /**
+   * TODO [Add method documentation]
+   * @param fechaCompra
+   */
+  public void setFechaCompra(Date fechaCompra) {
+    this.fechaCompra = fechaCompra;
+  }
 
-	public void setFechaStatus(Date fechaStatus) {
-		this.fechaStatus = fechaStatus;
-	}
-	
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + (int) (id ^ (id >>> 32));
-		return result;
-	}
+  /**
+   * TODO [Add method documentation]
+   * @return
+   */
+  public List<ArticuloOrden> getArticulos() {
+    return articulos;
+  }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		OrdenCompra other = (OrdenCompra) obj;
-		if (id != other.id)
-			return false;
-		return true;
-	}
+  /**
+   * TODO [Add method documentation]
+   * @param articulos
+   */
+  public void setArticulos(List<ArticuloOrden> articulos) {
+    this.articulos = articulos;
+  }
 
-	@Override
-	public String toString() {
-		return "OrdenCompra [id=" + id + ", fechaCompra=" + fechaCompra + ", status=" + status + ", fechaStatus="
-				+ fechaStatus + ", articulos=" + articulos + "]";
-	}
+  /**
+   * TODO [Add method documentation]
+   * @return
+   */
+  public StatusOrden getStatus() {
+    return status;
+  }
 
-	
-	
+  /**
+   * TODO [Add method documentation]
+   * @param status
+   */
+  public void setStatus(StatusOrden status) {
+    this.status = status;
+  }
+
+  /**
+   * TODO [Add method documentation]
+   * @return
+   */
+  public Date getFechaStatus() {
+    return fechaStatus;
+  }
+
+  /**
+   * TODO [Add method documentation]
+   * @param fechaStatus
+   */
+  public void setFechaStatus(Date fechaStatus) {
+    this.fechaStatus = fechaStatus;
+  }
+
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result + (int) (id ^ (id >>> 32));
+    return result;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj)
+      return true;
+    if (obj == null)
+      return false;
+    if (getClass() != obj.getClass())
+      return false;
+    OrdenCompra other = (OrdenCompra) obj;
+    if (id != other.id)
+      return false;
+    return true;
+  }
+
+  @Override
+  public String toString() {
+    return "OrdenCompra [id=" + id + ", fechaCompra=" + fechaCompra + ", status=" + status
+      + ", fechaStatus=" + fechaStatus + ", articulos=" + articulos + "]";
+  }
+
 }
