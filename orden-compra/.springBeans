@@ -10,6 +10,7 @@
 		<config>src/test/resources/jdbcEmbeddedDbResources.xml</config>
 		<config>src/main/resources/jdbcDaoAppContext.xml</config>
 		<config>src/main/resources/serviceAppContext.xml</config>
+		<config>src/test/resources/jdbcH2AppContext.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

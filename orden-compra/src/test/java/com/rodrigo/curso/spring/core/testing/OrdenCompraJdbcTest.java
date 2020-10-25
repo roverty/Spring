@@ -21,7 +21,7 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
  * TODO [Add class documentation]
  */
 @SpringJUnitConfig(locations = { "/serviceAppContext.xml", "/jdbcDaoAppContext.xml",
-  "/jdbcEmbeddedDbResources.xml" })
+  "/jdbcH2AppContext.xml" })
 public class OrdenCompraJdbcTest {
 
   @Resource
