@@ -109,6 +109,9 @@ public class OrdenCompraJdbcDao extends GenericJdbcDao implements OrdenCompraRep
       array);
   }
 
+  /**
+   * @param rowNum
+   */
   private static OrdenCompra ordenCompraRowMapper(ResultSet rs, int rowNum)
     throws SQLException {
     OrdenCompra orden;

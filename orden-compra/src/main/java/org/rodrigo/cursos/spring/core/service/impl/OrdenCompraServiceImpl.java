@@ -27,7 +27,7 @@ public class OrdenCompraServiceImpl implements OrdenCompraService {
       throw new IllegalArgumentException(
         "Orden invalida, Debe contener al menos un articulo");
     }
-    logger.debug("Orden v√°lida, registrando ...");
+    logger.debug("Orden v·lida, registrando ...");
 
     ordenCompraRepository.guarda(orden);
 
