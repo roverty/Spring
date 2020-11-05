@@ -12,6 +12,7 @@
 		<config>src/main/resources/serviceAppContext.xml</config>
 		<config>src/test/resources/jdbcH2AppContext.xml</config>
 		<config>src/main/resources/mappingSQLAppContext.xml</config>
+		<config>src/main/resources/hibernateAppContext.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
