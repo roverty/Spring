@@ -8,6 +8,7 @@ import org.rodrigo.cursos.spring.core.domain.OrdenCompra;
 import org.rodrigo.cursos.spring.core.repository.OrdenCompraRepository;
 import org.rodrigo.cursos.spring.core.service.OrdenCompraService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * TODO [Add class documentation]
@@ -21,6 +22,7 @@ public class OrdenCompraServiceImpl implements OrdenCompraService {
   private static final Logger logger = LogManager.getLogger(OrdenCompraServiceImpl.class);
 
   @Override
+  @Transactional
   public void registraOrden(OrdenCompra orden) {
     logger.debug("Processando la orden de compra {}", orden);
     if (orden.getArticulos() == null || orden.getArticulos().size() == 0) {
