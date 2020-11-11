@@ -2,10 +2,19 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="org.rodrigo.cursos.spring.core.domain">
+  <typedef
+    class="org.rodrigo.cursos.spring.core.repository.hibernate.GenericEnumUserType"
+    name="statusOrdenCompra">
+    <param name="enumClassName">org.rodrigo.cursos.spring.core.domain.StatusOrden</param>
+  </typedef>
   <class name="OrdenCompra" table="ORDEN_COMPRA">
     <id name="id" column="ORDEN_COMPRA_ID">
-      <generator class="identity" />
+      <generator class="sequence">
+        <param name="sequence">orden_compra_seq</param>
+      </generator>
     </id>
     <property name="fechaStatus" column="FECHA_STATUS" />
+    <property name="fechaCompra" column="FECHA_COMPRA" />
+    <property name="status" type="statusOrdenCompra" column="STATUS_ORDEN_ID" />
   </class>
 </hibernate-mapping>

@@ -1,13 +1,15 @@
 package org.rodrigo.cursos.spring.core.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 /**
  * TODO [Add class documentation]
  */
-public class OrdenCompra {
-  private long id;
+public class OrdenCompra implements Serializable {
+
+  private Long id;
 
   private Date fechaCompra;
 
@@ -21,7 +23,7 @@ public class OrdenCompra {
    * TODO [Add method documentation]
    * @return
    */
-  public long getId() {
+  public Long getId() {
     return id;
   }
 
@@ -29,7 +31,7 @@ public class OrdenCompra {
    * TODO [Add method documentation]
    * @param id
    */
-  public void setId(long id) {
+  public void setId(Long id) {
     this.id = id;
   }
 

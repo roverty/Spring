@@ -117,7 +117,7 @@ public class OrdenCompraJdbcDao extends GenericJdbcDao implements OrdenCompraRep
     OrdenCompra orden;
     int numCol = 1;
     orden = new OrdenCompra();
-    orden.setId(numCol++);
+    orden.setId(Long.valueOf(numCol++));
     orden.setFechaCompra(rs.getDate(numCol++));
     orden.setStatus(StatusOrden.valueOf(rs.getInt(numCol++)));
     orden.setFechaStatus(rs.getDate(numCol++));

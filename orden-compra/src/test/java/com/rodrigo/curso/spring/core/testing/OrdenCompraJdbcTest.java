@@ -39,7 +39,7 @@ public class OrdenCompraJdbcTest {
     ArticuloOrden articuloOrden;
 
     compra = new OrdenCompra();
-    compra.setId(1);
+    compra.setId(1L);
     compra.setFechaCompra(new Date());
     compra.setStatus(StatusOrden.REGISTRADA);
     compra.setFechaStatus(new Date());
