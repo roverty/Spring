@@ -1,0 +1,4 @@
+
+rootProject.name = 'orden-compra-app'
+include 'orden-compra'
+include 'orden-compra-web'

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+  <context:component-scan base-package="org.rodrigo.cursos.spring.web" />
+  
+  <!-- Cualquier path que tenga /resources sera accedido por spring para conseguir
+    hojas de estilo, js, etc. 
+    La ventaja es que no son publicos (el cliente no accede de manera directa)
+    @prop cache-period: Evitar solicitar un recursos que no ha cambiado. 
+  -->
+  <mvc:resources location="/resources/**" mapping="/WEB-INF/resources" cache-period="10"/>
+  <!-- Con view-controller, spring siempre nos redirige a una vista -->
+  <mvc:view-controller path="/menu" view-name="menu"/>
+  
+  <!-- Para poder personalizar el proceso de binding -->
+  <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
+  
+  <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+    <property name="webBindingInitializer"></property>
+  </bean>
+    
+</beans>
