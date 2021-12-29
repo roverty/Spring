@@ -18,11 +18,26 @@
   <!-- Con view-controller, spring siempre nos redirige a una vista -->
   <mvc:view-controller path="/menu" view-name="menu"/>
   
+  <!-- Gestor de vistas 
+    Nos ayuda a armar el path de una vista-->
+  <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <!-- Se configura la ruta donde esta la vista -->
+    <property name="prefix" value="/WEB-INF/views/jsp"/>
+    <property name="suffix" value=".jsp"/>
+  </bean>
+  
   <!-- Para poder personalizar el proceso de binding -->
   <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
   
+  <bean class="org.rodrigo.cursos.spring.web.binding.CustomBindingInitializer" 
+    id="customBindingInit"/>
+  
   <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
-    <property name="webBindingInitializer"></property>
+    <property name="webBindingInitializer" ref="customBindingInit"></property>
+  </bean>
+  
+  <bean id="messageSeource" class="org.springframework.context.support.ResourceBundleMessageSource">
+    <property name="basenames" value="custom-validation"/>
   </bean>
     
 </beans>

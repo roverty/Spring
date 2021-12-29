@@ -25,7 +25,9 @@ dependencies {
   implementation "org.apache.logging.log4j:log4j-api:$log4j2Version"
   implementation "javax.annotation:javax.annotation-api:$javaxAnnotationVersion"
   
-  implementation project(':orden-compra')
+  compile project(':orden-compra')
+  
+  implementation "javax.validation:validation-api:2.0.1.Final"
    
   runtimeOnly "org.apache.logging.log4j:log4j-core:$log4j2Version"
   runtimeOnly "org.apache.logging.log4j:log4j-slf4j-impl:$log4j2Version"

@@ -1,0 +1,6 @@
+  subprojects{
+
+  tasks.withType(JavaCompile){
+    options.encoding='ISO-8859-1'
+  }
+  }

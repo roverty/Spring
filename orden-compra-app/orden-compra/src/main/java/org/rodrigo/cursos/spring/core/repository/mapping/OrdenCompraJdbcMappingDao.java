@@ -1,4 +1,4 @@
-package org.rodrigo.cursos.spring.core.repository.jdbc.mapping;
+package org.rodrigo.cursos.spring.core.repository.mapping;
 
 import java.util.Date;
 import java.util.List;
@@ -8,7 +8,6 @@ import javax.annotation.Resource;
 import org.rodrigo.cursos.spring.core.domain.OrdenCompra;
 import org.rodrigo.cursos.spring.core.domain.StatusOrden;
 import org.rodrigo.cursos.spring.core.repository.OrdenCompraRepository;
-import org.rodrigo.cursos.spring.core.repository.mapping.OrdenCompraMappingQuery;
 import org.springframework.stereotype.Repository;
 
 @Repository("ordenCompraRepository")
